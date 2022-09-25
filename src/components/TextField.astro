@@ -1,0 +1,48 @@
+---
+export interface TextField {
+    label: string;
+    name: string;
+    placeholder?: string;
+    isRequired?: boolean;
+}
+
+const { label, name, placeholder = " ", isRequired } = Astro.props as TextField;
+---
+
+<div>
+    <label for={name}>{ label }</label>
+    {
+    isRequired 
+    ? <input type="text" name={name} placeholder={placeholder} required> 
+    : <input type="text" name={name} placeholder={placeholder}>
+    }
+</div>
+
+<style>
+    div {
+        margin: 0 0 1em 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+    }
+
+    input {
+        width: 15em;
+        padding: 0.5em;
+        border-radius: 0.3em;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.2);
+        box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+        color: #ffffff;
+    }
+
+    input:focus {
+        outline: none;
+    }
+</style>

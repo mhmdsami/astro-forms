@@ -1,0 +1,39 @@
+---
+import TextField from "./TextField.astro";
+import Button from "./Button.astro";
+---
+
+<form class="form">
+    <div class="row">
+        <TextField label="First Name" name="fname" placeholder="John" isRequired={true} />
+        <TextField label="Last Name" name="lname" placeholder="Doe" />
+    </div>
+    <div class="row">
+        <TextField label="Registration Number" name="regno" placeholder="RA2111027010115" isRequired={true} />
+        <TextField label="GitHub" name="github" placeholder="https://github.com/john-doe" />
+    </div>
+    <div class="row">
+        <TextField label="SRMIST Mail" name="mail" placeholder="jd0115@srmist.edu.in" isRequired={true} />
+        <TextField label="Phone Number" name="phone" placeholder="1234567890" isRequired={true} />
+    </div>
+    <div class="row button">
+        <Button content="Register" />
+    </div>
+</form>
+
+<style>
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .button {
+        margin-top: 1em;
+        justify-content: center;
+    }
+</style>
